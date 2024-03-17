@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            margin-top: 20px; 
+        }
+        input[type="submit"] {
+            width: 782px; 
+        }
+    </style>
+</head>
+<body>
+   <form action="" method="post">
+    Review Text:<br>
+    <textarea name="test_string" rows="30" cols="103" placeholder="Enter Review Text" required>{{ form_data.get('test_string', '') }}</textarea><br>
+    <input type="submit" value="Predict">
+   </form> 
+
+   <h2>Prediction : </h2>
+   {% if prediction==1 %}
+   <h2>Positive Review!</h2>
+   {% else %}
+   <h2>Negative Review!</h2>
+   {% endif %}
+</body>
+</html>
